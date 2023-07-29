@@ -327,8 +327,8 @@ def main():
 
         p_num_delta = np.invert(np.array(paddings[start_layer] * 1)).sum()
         p_num_min = (len(paddings[start_layer]) - p_num_delta) // 2
-        neuron_index = st.slider('Select neuron index', min_value=p_num_min,
-                                 max_value=p_num_min + p_num_delta - 1, value=3)
+        print([p_num_min, p_num_delta])
+        neuron_index = st.slider('Select neuron index', min_value=int(p_num_min),  max_value=int(p_num_min + p_num_delta - 1), value=3)
         st.markdown("""<div style="padding-top: 15px"></div>""", unsafe_allow_html=True)
     # white space
     with r2_col2:
